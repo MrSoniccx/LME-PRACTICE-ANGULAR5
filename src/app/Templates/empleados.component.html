@@ -1,0 +1,20 @@
+<div class="row p-2">
+    <div class="col" *ngFor="let empleado of trabajadores; let i = index">
+        <div  class="card border-dark mb-3">
+            <div class="card-header">
+                <h4>{{i+1}}.- {{ empleado.nombre }}</h4>
+            </div>
+            <div class="card-body text-dark">
+                <h5 class="card-title">
+                    <b> {{ empleado.cargo }} </b>
+                </h5>
+                <p class="card-text">
+                    <b>Edad</b>: {{ empleado.edad }} <br />
+                    <b>Contratado</b>: 
+                    <span *ngIf="empleado.contratado == true" class="badge bg-success"> Si</span>
+                    <span *ngIf="empleado.contratado == false" class="badge bg-danger"> No</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
